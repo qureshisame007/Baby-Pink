@@ -1,0 +1,1199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Baby Pink – Princess Glow</title>
+  <meta name="description" content="Baby Pink – Princess Glow. Shop skin care, makeup, hair care, bath & body, and nail care products." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+  <style>
+    /* ── RESET & BASE ─────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: #fff8f9;
+      color: #2a1a1e;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* ── CSS VARIABLES ───────────────────────────────────── */
+    :root {
+      --pink:        #f4a9be;
+      --pink-deep:   #e07090;
+      --pink-soft:   #fde8ef;
+      --rose:        #c9536e;
+      --cream:       #fff8f9;
+      --gold:        #c9a078;
+      --gold-light:  #f0dcc8;
+      --text:        #2a1a1e;
+      --text-muted:  #8a6570;
+      --white:       #ffffff;
+      --shadow:      0 4px 24px rgba(200,80,110,0.10);
+      --shadow-lg:   0 12px 48px rgba(200,80,110,0.18);
+      --radius:      18px;
+      --radius-sm:   10px;
+      --transition:  0.3s cubic-bezier(.4,0,.2,1);
+    }
+
+    /* ── HEADER ──────────────────────────────────────────── */
+    header {
+      background: linear-gradient(135deg, #fde8ef 0%, #fff0f5 50%, #fde8ef 100%);
+      border-bottom: 1px solid #f4c8d8;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: 0 1rem;
+    }
+    .header-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.75rem 0;
+    }
+    .brand {
+      display: flex;
+      flex-direction: column;
+      line-height: 1;
+    }
+    .brand-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.5rem, 4vw, 2rem);
+      font-weight: 600;
+      color: var(--rose);
+      letter-spacing: 0.04em;
+    }
+    .brand-name span { color: var(--gold); }
+    .brand-tagline {
+      font-size: 0.65rem;
+      font-weight: 300;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+    /* Cart button in header */
+    .header-cart-btn {
+      position: relative;
+      background: var(--rose);
+      color: #fff;
+      border: none;
+      border-radius: 50px;
+      padding: 0.5rem 1.1rem;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 500;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: var(--transition);
+      box-shadow: 0 4px 14px rgba(200,80,110,0.25);
+    }
+    .header-cart-btn:hover { background: var(--pink-deep); transform: translateY(-1px); }
+    .cart-badge {
+      background: #fff;
+      color: var(--rose);
+      border-radius: 50%;
+      width: 18px;
+      height: 18px;
+      font-size: 0.65rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    /* ── HERO STRIP ──────────────────────────────────────── */
+    .hero-strip {
+      background: linear-gradient(to right, #fce4ec, #fff0f5, #f8bbd0, #fce4ec);
+      background-size: 300% 100%;
+      animation: shimmer 6s ease-in-out infinite;
+      text-align: center;
+      padding: 2.2rem 1rem 1.8rem;
+    }
+    @keyframes shimmer {
+      0%,100% { background-position: 0% 50%; }
+      50%      { background-position: 100% 50%; }
+    }
+    .hero-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 6vw, 3.4rem);
+      font-weight: 300;
+      font-style: italic;
+      color: var(--rose);
+      line-height: 1.1;
+    }
+    .hero-sub {
+      font-size: 0.8rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-top: 0.4rem;
+    }
+    .hero-divider {
+      width: 60px;
+      height: 1.5px;
+      background: var(--gold);
+      margin: 0.8rem auto 0;
+      border-radius: 2px;
+    }
+
+    /* ── CATEGORY FILTER ─────────────────────────────────── */
+    .filter-section {
+      max-width: 900px;
+      margin: 1.8rem auto 0;
+      padding: 0 1rem;
+    }
+    .filter-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 0.6rem;
+    }
+    .filter-pills {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+    .pill {
+      padding: 0.4rem 1rem;
+      border-radius: 50px;
+      border: 1.5px solid var(--pink);
+      background: transparent;
+      color: var(--rose);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 400;
+      cursor: pointer;
+      transition: var(--transition);
+      white-space: nowrap;
+    }
+    .pill:hover { background: var(--pink-soft); }
+    .pill.active {
+      background: var(--rose);
+      color: #fff;
+      border-color: var(--rose);
+      box-shadow: 0 3px 12px rgba(200,80,110,0.22);
+    }
+
+    /* ── PRODUCT GRID ────────────────────────────────────── */
+    .products-section {
+      max-width: 900px;
+      margin: 1.5rem auto 6rem;
+      padding: 0 1rem;
+    }
+    .section-heading {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: var(--text);
+      margin-bottom: 1rem;
+    }
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(155px, 1fr));
+      gap: 1rem;
+    }
+
+    /* ── PRODUCT CARD ────────────────────────────────────── */
+    .card {
+      background: #fff;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+    .card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+    .card-img-wrap {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      overflow: hidden;
+      background: var(--pink-soft);
+    }
+    .card-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+    .card:hover .card-img-wrap img { transform: scale(1.06); }
+    .card-badge {
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      background: var(--rose);
+      color: #fff;
+      font-size: 0.58rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 2px 7px;
+      border-radius: 20px;
+    }
+    .card-body {
+      padding: 0.75rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .card-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+      line-height: 1.25;
+      margin-bottom: 3px;
+    }
+    .card-desc {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+      line-height: 1.4;
+    }
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: auto;
+    }
+    .card-price {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--rose);
+    }
+    .add-btn {
+      background: var(--rose);
+      color: #fff;
+      border: none;
+      border-radius: 50px;
+      padding: 0.32rem 0.75rem;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .add-btn:hover { background: var(--pink-deep); transform: scale(1.05); }
+    .add-btn.added {
+      background: #4caf7d;
+      pointer-events: none;
+    }
+
+    /* ── FLOATING WHATSAPP ───────────────────────────────── */
+    .fab-wa {
+      position: fixed;
+      bottom: 5.5rem;
+      right: 1rem;
+      background: #25D366;
+      color: #fff;
+      border-radius: 50px;
+      padding: 0.6rem 1rem;
+      font-size: 0.78rem;
+      font-weight: 500;
+      font-family: 'DM Sans', sans-serif;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.35);
+      z-index: 90;
+      transition: var(--transition);
+      animation: floatIn 0.6s 0.5s both;
+    }
+    .fab-wa:hover { transform: translateY(-3px) scale(1.03); }
+
+    /* ── FLOATING CART ───────────────────────────────────── */
+    .fab-cart {
+      position: fixed;
+      bottom: 1rem;
+      right: 1rem;
+      background: var(--rose);
+      color: #fff;
+      border: none;
+      border-radius: 50px;
+      padding: 0.7rem 1.2rem;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 500;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: var(--shadow-lg);
+      z-index: 90;
+      transition: var(--transition);
+      animation: floatIn 0.5s 0.3s both;
+    }
+    .fab-cart:hover { background: var(--pink-deep); transform: translateY(-2px); }
+    .fab-badge {
+      background: #fff;
+      color: var(--rose);
+      border-radius: 50%;
+      width: 20px;
+      height: 20px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    @keyframes floatIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── MODAL OVERLAY ───────────────────────────────────── */
+    .overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(42,26,30,0.45);
+      z-index: 200;
+      backdrop-filter: blur(4px);
+      animation: fadeIn 0.25s ease;
+    }
+    .overlay.open { display: flex; align-items: flex-end; justify-content: center; }
+    @media (min-width: 600px) { .overlay.open { align-items: center; } }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+    /* ── MODAL PANEL ─────────────────────────────────────── */
+    .modal {
+      background: #fff;
+      width: 100%;
+      max-width: 500px;
+      border-radius: 24px 24px 0 0;
+      max-height: 90vh;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      animation: slideUp 0.35s cubic-bezier(.3,.8,.4,1) both;
+    }
+    @media (min-width: 600px) {
+      .modal { border-radius: 24px; max-height: 80vh; }
+    }
+    @keyframes slideUp {
+      from { transform: translateY(40px); opacity: 0; }
+      to   { transform: translateY(0);   opacity: 1; }
+    }
+    .modal-head {
+      padding: 1.2rem 1.4rem;
+      border-bottom: 1px solid #fde8ef;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-shrink: 0;
+    }
+    .modal-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: var(--rose);
+    }
+    .close-btn {
+      background: var(--pink-soft);
+      border: none;
+      color: var(--rose);
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      font-size: 1.1rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+    }
+    .close-btn:hover { background: var(--pink); }
+    .modal-body { overflow-y: auto; flex: 1; padding: 1rem 1.4rem; }
+
+    /* ── CART ITEMS ──────────────────────────────────────── */
+    .empty-cart {
+      text-align: center;
+      padding: 2.5rem 1rem;
+      color: var(--text-muted);
+    }
+    .empty-cart .empty-icon { font-size: 2.5rem; margin-bottom: 0.5rem; }
+    .empty-cart p { font-size: 0.85rem; }
+
+    .cart-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid #fde8ef;
+      animation: fadeIn 0.2s ease;
+    }
+    .cart-item-img {
+      width: 52px;
+      height: 52px;
+      border-radius: 10px;
+      object-fit: cover;
+      background: var(--pink-soft);
+      flex-shrink: 0;
+    }
+    .cart-item-info { flex: 1; min-width: 0; }
+    .cart-item-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      color: var(--text);
+    }
+    .cart-item-price { font-size: 0.78rem; color: var(--text-muted); }
+    .cart-item-subtotal {
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--rose);
+      margin-top: 1px;
+    }
+    .qty-controls {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-shrink: 0;
+    }
+    .qty-btn {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      border: 1.5px solid var(--pink);
+      background: #fff;
+      color: var(--rose);
+      font-size: 1rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 1;
+      transition: var(--transition);
+    }
+    .qty-btn:hover { background: var(--rose); color: #fff; border-color: var(--rose); }
+    .qty-num { font-size: 0.85rem; font-weight: 500; min-width: 16px; text-align: center; }
+    .remove-btn {
+      background: none;
+      border: none;
+      color: #ccc;
+      cursor: pointer;
+      font-size: 1rem;
+      padding: 4px;
+      transition: color 0.2s;
+    }
+    .remove-btn:hover { color: #e07090; }
+
+    /* ── CART FOOTER ─────────────────────────────────────── */
+    .cart-footer {
+      padding: 1rem 1.4rem;
+      border-top: 1px solid #fde8ef;
+      flex-shrink: 0;
+      background: #fff;
+    }
+    .total-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.8rem;
+    }
+    .total-label { font-size: 0.78rem; color: var(--text-muted); letter-spacing: 0.08em; text-transform: uppercase; }
+    .total-amount {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--rose);
+    }
+    .checkout-btn {
+      width: 100%;
+      background: linear-gradient(135deg, var(--rose), var(--pink-deep));
+      color: #fff;
+      border: none;
+      border-radius: 14px;
+      padding: 0.9rem;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 500;
+      cursor: pointer;
+      letter-spacing: 0.05em;
+      transition: var(--transition);
+      box-shadow: 0 4px 16px rgba(200,80,110,0.3);
+    }
+    .checkout-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(200,80,110,0.35); }
+
+    /* ── ORDER FORM ──────────────────────────────────────── */
+    .form-section { margin-top: 0.2rem; }
+    .form-section h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      color: var(--text);
+      margin-bottom: 0.8rem;
+    }
+    .form-group { margin-bottom: 0.8rem; }
+    .form-group label {
+      display: block;
+      font-size: 0.72rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 0.3rem;
+    }
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.65rem 0.9rem;
+      border: 1.5px solid #f4c8d8;
+      border-radius: var(--radius-sm);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.85rem;
+      color: var(--text);
+      background: var(--cream);
+      transition: border-color 0.2s;
+      outline: none;
+    }
+    .form-group input:focus,
+    .form-group textarea:focus { border-color: var(--rose); }
+    .form-group textarea { resize: vertical; min-height: 70px; }
+    .place-order-btn {
+      width: 100%;
+      background: linear-gradient(135deg, var(--rose), var(--pink-deep));
+      color: #fff;
+      border: none;
+      border-radius: 14px;
+      padding: 0.9rem;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 500;
+      cursor: pointer;
+      margin-top: 0.5rem;
+      transition: var(--transition);
+      box-shadow: 0 4px 16px rgba(200,80,110,0.3);
+    }
+    .place-order-btn:hover { transform: translateY(-2px); }
+    .place-order-btn:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      cursor: pointer;
+      margin-bottom: 1rem;
+      background: none;
+      border: none;
+      font-family: 'DM Sans', sans-serif;
+    }
+    .back-link:hover { color: var(--rose); }
+
+    /* ── SUCCESS STATE ───────────────────────────────────── */
+    .success-box {
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+    .success-icon { font-size: 3rem; margin-bottom: 0.8rem; }
+    .success-box h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      color: var(--rose);
+      margin-bottom: 0.5rem;
+    }
+    .success-box p { font-size: 0.83rem; color: var(--text-muted); line-height: 1.6; }
+    .wa-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #25D366;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 10px;
+      padding: 0.65rem 1.2rem;
+      font-size: 0.85rem;
+      font-weight: 500;
+      margin-top: 1rem;
+      transition: var(--transition);
+    }
+    .wa-link:hover { background: #1da851; }
+
+    /* ── FOOTER ──────────────────────────────────────────── */
+    footer {
+      background: #2a1a1e;
+      color: #c9a8b8;
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.75rem;
+      line-height: 1.8;
+    }
+    footer strong { color: #f4a9be; }
+    footer a { color: #f4a9be; text-decoration: none; }
+
+    /* ── TOAST ───────────────────────────────────────────── */
+    .toast {
+      position: fixed;
+      bottom: 5.5rem;
+      left: 50%;
+      transform: translateX(-50%) translateY(20px);
+      background: #2a1a1e;
+      color: #fff;
+      padding: 0.6rem 1.2rem;
+      border-radius: 30px;
+      font-size: 0.8rem;
+      z-index: 300;
+      opacity: 0;
+      transition: all 0.3s ease;
+      white-space: nowrap;
+      pointer-events: none;
+    }
+    .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+    /* ── UTIL ────────────────────────────────────────────── */
+    .hidden { display: none !important; }
+    svg { display: block; }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════ HEADER -->
+<header>
+  <div class="header-inner">
+    <div class="brand">
+      <span class="brand-name">Baby <span>Pink</span></span>
+      <span class="brand-tagline">✦ Princess Glow ✦</span>
+    </div>
+    <button class="header-cart-btn" onclick="openCart()">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+      Cart
+      <span class="cart-badge" id="headerBadge">0</span>
+    </button>
+  </div>
+</header>
+
+<!-- ═══════════════════════════════════════ HERO -->
+<div class="hero-strip">
+  <div class="hero-title">Your Glow,<br/>Our Passion 🌸</div>
+  <div class="hero-sub">Skincare · Makeup · Haircare · Bath & Body · Nails</div>
+  <div class="hero-divider"></div>
+</div>
+
+<!-- ═══════════════════════════════════════ FILTER -->
+<div class="filter-section">
+  <div class="filter-label">Shop by category</div>
+  <div class="filter-pills" id="filterPills">
+    <button class="pill active" data-cat="all">All</button>
+    <button class="pill" data-cat="skin-care">Skin Care</button>
+    <button class="pill" data-cat="makeup">Makeup</button>
+    <button class="pill" data-cat="hair-care">Hair Care</button>
+    <button class="pill" data-cat="bath-body">Bath & Body</button>
+    <button class="pill" data-cat="nail-care">Nail Care</button>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════ PRODUCTS -->
+<main class="products-section">
+  <div class="section-heading">Our Collection</div>
+  <div class="product-grid" id="productGrid"></div>
+</main>
+
+<!-- ═══════════════════════════════════════ FOOTER -->
+<footer>
+  <strong>Baby Pink</strong> — Princess Glow 🌸<br/>
+  📍 Near HDFC Bank, Khetia Road, Pansemal M.P. 451770<br/>
+  📞 <a href="tel:8602675154">8602675154</a> &nbsp;|&nbsp;
+  ✉️ <a href="mailto:kureshisame007@gmail.com">kureshisame007@gmail.com</a><br/><br/>
+  <small>© 2025 Baby Pink. Orders are collected online — shopkeeper will confirm via WhatsApp.</small>
+</footer>
+
+<!-- ═══════════════════════════════════════ FAB WHATSAPP -->
+<a class="fab-wa" href="https://wa.me/918602675154" target="_blank" rel="noopener">
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  Chat on WhatsApp
+</a>
+
+<!-- ═══════════════════════════════════════ FAB CART -->
+<button class="fab-cart" onclick="openCart()" id="fabCart">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+  My Cart
+  <span class="fab-badge" id="fabBadge">0</span>
+</button>
+
+<!-- ═══════════════════════════════════════ TOAST -->
+<div class="toast" id="toast"></div>
+
+<!-- ═══════════════════════════════════════ CART MODAL -->
+<div class="overlay" id="cartOverlay" onclick="handleOverlayClick(event)">
+  <div class="modal" id="cartModal">
+    <div class="modal-head">
+      <span class="modal-title" id="modalTitle">🛒 My Cart</span>
+      <button class="close-btn" onclick="closeCart()">✕</button>
+    </div>
+    <div class="modal-body" id="modalBody">
+      <!-- Dynamically rendered -->
+    </div>
+    <div class="cart-footer" id="cartFooter"></div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════ JS -->
+<script>
+/* ══════════════════════════════════════════════════════════
+   PRODUCT DATA
+   NOTE: Replace placeholder image URLs with your own
+   imgbb.com hosted images for best results.
+══════════════════════════════════════════════════════════ */
+const PRODUCTS = [
+  {
+    id: 1,
+    name: "Skin Glow Serum",
+    price: 280,
+    category: "skin-care",
+    badge: "Bestseller",
+    desc: "Brightening serum for radiant, dewy skin",
+    img: "https://i.ibb.co/cSHHFf7B/ee89-L0-R9-GH9-B4-GI6pyye-MGZc4-A8z-YZA0-Pj-G26d-C3-E7-UStey-Faf11-Nm-CWu-SDc3z-MYPGAkto3-Nzk-IQm-Skbbby3-Xkl.jpg"
+  },
+  {
+    id: 2,
+    name: "Baby Pink Foundation",
+    price: 280,
+    category: "makeup",
+    badge: "New",
+    desc: "Lightweight full-coverage foundation",
+    img: "https://i.ibb.co/0jMzvHbN/4q0s-VLHQTv6fi-AQNr-Bt-C0opys-K8-Sse-v7d157-Peqv6l7-ZMpu4op-Tc5fp-K8hik-QJv-TWYrxv-O8-Rbj7dy-DYAGx-IXsek.jpg"
+  },
+  {
+    id: 3,
+    name: "Rose Lip Gloss",
+    price: 149,
+    category: "makeup",
+    badge: "",
+    desc: "Juicy rose-tinted lip gloss with SPF",
+    img: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Crect width='400' height='400' fill='%23fde8ef'/%3E%3Cellipse cx='200' cy='220' rx='40' ry='110' fill='%23e07090' rx='20'/%3E%3Cellipse cx='200' cy='130' rx='40' ry='30' fill='%23c9536e'/%3E%3Cellipse cx='200' cy='125' rx='35' ry='25' fill='%23f4a9be'/%3E%3Crect x='185' y='90' width='30' height='50' rx='8' fill='%23c9a078'/%3E%3Ctext x='200' y='370' text-anchor='middle' font-family='Georgia' font-size='28' fill='%23c9536e'%3E💋%3C/text%3E%3C/svg%3E"
+  },
+  {
+    id: 4,
+    name: "Vitamin C Moisturizer",
+    price: 349,
+    category: "skin-care",
+    badge: "Popular",
+    desc: "Daily moisturizer with Vitamin C & hyaluronic acid",
+    img: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Crect width='400' height='400' fill='%23fff0e8'/%3E%3Crect x='130' y='120' width='140' height='180' rx='20' fill='%23f4a9be'/%3E%3Crect x='150' y='100' width='100' height='30' rx='10' fill='%23e07090'/%3E%3Crect x='140' y='155' width='120' height='8' rx='4' fill='%23fff' opacity='.6'/%3E%3Crect x='140' y='175' width='90' height='6' rx='3' fill='%23fff' opacity='.4'/%3E%3Ctext x='200' y='260' text-anchor='middle' font-family='Georgia' font-size='22' fill='%23fff'%3EVit C%3C/text%3E%3Ctext x='200' y='370' text-anchor='middle' font-family='Georgia' font-size='28' fill='%23e07090'%3E✨%3C/text%3E%3C/svg%3E"
+  },
+  {
+    id: 5,
+    name: "Nourishing Hair Serum",
+    price: 299,
+    category: "hair-care",
+    badge: "",
+    desc: "Frizz-control serum for silky, shiny hair",
+    img: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Crect width='400' height='400' fill='%23e8f5e9'/%3E%3Cellipse cx='200' cy='240' rx='45' ry='120' fill='%234caf7d'/%3E%3Cellipse cx='200' cy='130' rx='45' ry='25' fill='%23388e3c'/%3E%3Cellipse cx='200' cy='126' rx='40' ry='20' fill='%2366bb6a'/%3E%3Crect x='183' y='90' width='34' height='45' rx='8' fill='%23c9a078'/%3E%3Ctext x='200' y='370' text-anchor='middle' font-family='Georgia' font-size='28' fill='%23388e3c'%3E🌿%3C/text%3E%3C/svg%3E"
+  },
+  {
+    id: 6,
+    name: "Lavender Body Lotion",
+    price: 249,
+    category: "bath-body",
+    badge: "",
+    desc: "Deeply hydrating lotion with calming lavender",
+    img: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Crect width='400' height='400' fill='%23ede7f6'/%3E%3Crect x='135' y='130' width='130' height='180' rx='22' fill='%239c7cbe'/%3E%3Crect x='152' y='108' width='96' height='32' rx='10' fill='%237b5ea7'/%3E%3Crect x='165' y='100' width='70' height='18' rx='6' fill='%23ce93d8'/%3E%3Crect x='148' y='165' width='104' height='6' rx='3' fill='%23fff' opacity='.4'/%3E%3Ctext x='200' y='260' text-anchor='middle' font-family='Georgia' font-size='18' fill='%23fff'%3ELavender%3C/text%3E%3Ctext x='200' y='370' text-anchor='middle' font-family='Georgia' font-size='28' fill='%239c7cbe'%3E💜%3C/text%3E%3C/svg%3E"
+  },
+  {
+    id: 7,
+    name: "Glitter Nail Polish",
+    price: 99,
+    category: "nail-care",
+    badge: "",
+    desc: "Long-lasting glitter nail colour – 20+ shades",
+    img: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Crect width='400' height='400' fill='%23fff8e1'/%3E%3Cellipse cx='200' cy='250' rx='35' ry='100' fill='%23f48fb1'/%3E%3Cellipse cx='200' cy='158' rx='35' ry='22' fill='%23c2185b'/%3E%3Cellipse cx='200' cy='154' rx='30' ry='18' fill='%23f06292'/%3E%3Crect x='185' y='118' width='30' height='44' rx='6' fill='%23c9a078'/%3E%3Ccircle cx='185' cy='240' r='4' fill='%23fff' opacity='.5'/%3E%3Ccircle cx='212' cy='260' r='3' fill='%23fff' opacity='.5'/%3E%3Ccircle cx='195' cy='275' r='5' fill='%23fff' opacity='.4'/%3E%3Ctext x='200' y='370' text-anchor='middle' font-family='Georgia' font-size='28' fill='%23c2185b'%3E💅%3C/text%3E%3C/svg%3E"
+  },
+  {
+    id: 8,
+    name: "Rose Brightening Face Wash",
+    price: 199,
+    category: "skin-care",
+    badge: "",
+    desc: "Gentle rose face wash for glowing, clear skin",
+    img: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Crect width='400' height='400' fill='%23fce4ec'/%3E%3Crect x='140' y='140' width='120' height='160' rx='18' fill='%23e91e63'/%3E%3Crect x='155' y='120' width='90' height='30' rx='10' fill='%23c2185b'/%3E%3Crect x='165' y='112' width='70' height='16' rx='5' fill='%23f48fb1'/%3E%3Crect x='153' y='175' width='94' height='6' rx='3' fill='%23fff' opacity='.4'/%3E%3Ctext x='200' y='255' text-anchor='middle' font-family='Georgia' font-size='18' fill='%23fff'%3ERose%3C/text%3E%3Ctext x='200' y='370' text-anchor='middle' font-family='Georgia' font-size='28' fill='%23e91e63'%3E🌹%3C/text%3E%3C/svg%3E"
+  },
+  {
+    id: 9,
+    name: "Almond Kajal",
+    price: 89,
+    category: "makeup",
+    badge: "",
+    desc: "Smudge-proof kajal with almond & vitamin E",
+    img: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Crect width='400' height='400' fill='%23263238'/%3E%3Crect x='180' y='80' width='40' height='240' rx='8' fill='%23b0bec5'/%3E%3Crect x='180' y='290' width='40' height='40' rx='4' fill='%23111'/%3E%3Crect x='184' y='84' width='32' height='200' rx='6' fill='%23cfd8dc'/%3E%3Ctext x='200' y='370' text-anchor='middle' font-family='Georgia' font-size='22' fill='%23eceff1'%3E✦ Kajal%3C/text%3E%3C/svg%3E"
+  },
+  {
+    id: 10,
+    name: "Silk Smooth Shampoo",
+    price: 279,
+    category: "hair-care",
+    badge: "",
+    desc: "Protein-rich shampoo for smooth, lustrous hair",
+    img: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Crect width='400' height='400' fill='%23e3f2fd'/%3E%3Crect x='140' y='120' width='120' height='190' rx='22' fill='%231976d2'/%3E%3Crect x='155' y='100' width='90' height='30' rx='10' fill='%231565c0'/%3E%3Crect x='168' y='93' width='64' height='16' rx='5' fill='%2390caf9'/%3E%3Crect x='152' y='160' width='96' height='6' rx='3' fill='%23fff' opacity='.35'/%3E%3Ctext x='200' y='255' text-anchor='middle' font-family='Georgia' font-size='16' fill='%23fff'%3ESilk Smooth%3C/text%3E%3Ctext x='200' y='370' text-anchor='middle' font-family='Georgia' font-size='28' fill='%231976d2'%3E🌊%3C/text%3E%3C/svg%3E"
+  },
+  {
+    id: 11,
+    name: "Rose Bath Salt",
+    price: 199,
+    category: "bath-body",
+    badge: "",
+    desc: "Relaxing rose & himalayan salt bath soak",
+    img: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Crect width='400' height='400' fill='%23fce4ec'/%3E%3Crect x='130' y='150' width='140' height='160' rx='16' fill='%23f8bbd0'/%3E%3Crect x='148' y='135' width='104' height='24' rx='8' fill='%23f48fb1'/%3E%3Ccircle cx='172' cy='210' r='6' fill='%23e91e63' opacity='.5'/%3E%3Ccircle cx='195' cy='225' r='4' fill='%23e91e63' opacity='.4'/%3E%3Ccircle cx='220' cy='208' r='5' fill='%23e91e63' opacity='.5'/%3E%3Ccircle cx='210' cy='240' r='7' fill='%23e91e63' opacity='.3'/%3E%3Ctext x='200' y='370' text-anchor='middle' font-family='Georgia' font-size='28' fill='%23e91e63'%3E🌸%3C/text%3E%3C/svg%3E"
+  },
+  {
+    id: 12,
+    name: "French Nail Art Kit",
+    price: 199,
+    category: "nail-care",
+    badge: "New",
+    desc: "Complete French manicure kit with tools",
+    img: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Crect width='400' height='400' fill='%23fce4ec'/%3E%3Crect x='130' y='160' width='140' height='120' rx='14' fill='%23fff'/%3E%3Crect x='130' y='160' width='140' height='30' rx='14' fill='%23f48fb1'/%3E%3Crect x='143' y='205' width='50' height='8' rx='4' fill='%23f48fb1'/%3E%3Crect x='143' y='225' width='70' height='8' rx='4' fill='%23fce4ec'/%3E%3Crect x='143' y='245' width='55' height='8' rx='4' fill='%23fce4ec'/%3E%3Ctext x='200' y='370' text-anchor='middle' font-family='Georgia' font-size='28' fill='%23c2185b'%3E🤍%3C/text%3E%3C/svg%3E"
+  }
+];
+
+/* ════════════════════════════════════════════
+   STATE
+════════════════════════════════════════════ */
+let cart = JSON.parse(localStorage.getItem('babyPinkCart') || '[]');
+let currentView = 'cart'; // 'cart' | 'checkout' | 'success'
+
+/* ════════════════════════════════════════════
+   RENDER PRODUCTS
+════════════════════════════════════════════ */
+function renderProducts(filter = 'all') {
+  const grid = document.getElementById('productGrid');
+  const list = filter === 'all' ? PRODUCTS : PRODUCTS.filter(p => p.category === filter);
+
+  grid.innerHTML = list.map(p => {
+    const inCart = cart.find(c => c.id === p.id);
+    return `
+    <div class="card" data-id="${p.id}">
+      <div class="card-img-wrap">
+        <img src="${p.img}" alt="${p.name}" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%27400%27 height=%27400%27%3E%3Crect width=%27400%27 height=%27400%27 fill=%27%23fde8ef%27/%3E%3Ctext x=%27200%27 y=%27210%27 text-anchor=%27middle%27 font-family=%27Georgia%27 font-size=%2740%27 fill=%27%23f4a9be%27%3E🌸%3C/text%3E%3C/svg%3E'" />
+      </div>
+      ${p.badge ? `<div class="card-badge">${p.badge}</div>` : ''}
+      <div class="card-body">
+        <div class="card-name">${p.name}</div>
+        <div class="card-desc">${p.desc}</div>
+        <div class="card-footer">
+          <span class="card-price">₹${p.price}</span>
+          <button class="add-btn ${inCart ? 'added' : ''}" onclick="addToCart(${p.id}, this)">
+            ${inCart
+              ? `<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg> Added`
+              : `<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg> Add`}
+          </button>
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+/* ════════════════════════════════════════════
+   FILTER PILLS
+════════════════════════════════════════════ */
+document.getElementById('filterPills').addEventListener('click', e => {
+  const btn = e.target.closest('.pill');
+  if (!btn) return;
+  document.querySelectorAll('.pill').forEach(p => p.classList.remove('active'));
+  btn.classList.add('active');
+  renderProducts(btn.dataset.cat);
+});
+
+/* ════════════════════════════════════════════
+   CART HELPERS
+════════════════════════════════════════════ */
+function saveCart() {
+  localStorage.setItem('babyPinkCart', JSON.stringify(cart));
+}
+function getTotal() {
+  return cart.reduce((s, i) => s + i.price * i.qty, 0);
+}
+function updateBadges() {
+  const count = cart.reduce((s, i) => s + i.qty, 0);
+  document.getElementById('headerBadge').textContent = count;
+  document.getElementById('fabBadge').textContent = count;
+}
+
+function addToCart(id, btn) {
+  const product = PRODUCTS.find(p => p.id === id);
+  const existing = cart.find(c => c.id === id);
+  if (existing) {
+    existing.qty++;
+  } else {
+    cart.push({ id: product.id, name: product.name, price: product.price, img: product.img, qty: 1 });
+    if (btn) {
+      btn.classList.add('added');
+      btn.innerHTML = `<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg> Added`;
+    }
+  }
+  saveCart();
+  updateBadges();
+  showToast(`${product.name} added to cart 🛒`);
+}
+
+function changeQty(id, delta) {
+  const item = cart.find(c => c.id === id);
+  if (!item) return;
+  item.qty += delta;
+  if (item.qty <= 0) cart = cart.filter(c => c.id !== id);
+  saveCart();
+  updateBadges();
+  renderCartBody();
+  // refresh product grid button states
+  renderProducts(document.querySelector('.pill.active').dataset.cat);
+}
+
+function removeItem(id) {
+  cart = cart.filter(c => c.id !== id);
+  saveCart();
+  updateBadges();
+  renderCartBody();
+  renderProducts(document.querySelector('.pill.active').dataset.cat);
+}
+
+/* ════════════════════════════════════════════
+   CART MODAL
+════════════════════════════════════════════ */
+function openCart() {
+  currentView = 'cart';
+  document.getElementById('cartOverlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+  renderCartBody();
+}
+function closeCart() {
+  document.getElementById('cartOverlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+function handleOverlayClick(e) {
+  if (e.target === document.getElementById('cartOverlay')) closeCart();
+}
+
+function renderCartBody() {
+  const body   = document.getElementById('modalBody');
+  const footer = document.getElementById('cartFooter');
+  const title  = document.getElementById('modalTitle');
+
+  if (currentView === 'success') {
+    title.textContent = '🎉 Order Placed!';
+    body.innerHTML = `
+      <div class="success-box">
+        <div class="success-icon">🌸</div>
+        <h3>Thank You!</h3>
+        <p>Your order has been placed successfully.<br/>
+        <strong>Baby Pink</strong> will contact you on WhatsApp to confirm your order shortly.</p>
+        <a class="wa-link" href="https://wa.me/918602675154" target="_blank">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Message us on WhatsApp
+        </a>
+      </div>`;
+    footer.innerHTML = '';
+    return;
+  }
+
+  if (currentView === 'checkout') {
+    renderCheckoutForm(body, footer, title);
+    return;
+  }
+
+  // CART VIEW
+  title.textContent = '🛒 My Cart';
+  if (cart.length === 0) {
+    body.innerHTML = `
+      <div class="empty-cart">
+        <div class="empty-icon">🛍️</div>
+        <p>Your cart is empty.<br/>Add something pretty!</p>
+      </div>`;
+    footer.innerHTML = '';
+    return;
+  }
+
+  body.innerHTML = cart.map(item => `
+    <div class="cart-item">
+      <img class="cart-item-img" src="${item.img}" alt="${item.name}" loading="lazy"
+           onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2752%27 height=%2752%27%3E%3Crect width=%2752%27 height=%2752%27 fill=%27%23fde8ef%27/%3E%3Ctext x=%2726%27 y=%2732%27 text-anchor=%27middle%27 font-size=%2720%27%3E🌸%3C/text%3E%3C/svg%3E'" />
+      <div class="cart-item-info">
+        <div class="cart-item-name">${item.name}</div>
+        <div class="cart-item-price">₹${item.price} each</div>
+        <div class="cart-item-subtotal">Subtotal: ₹${item.price * item.qty}</div>
+      </div>
+      <div class="qty-controls">
+        <button class="qty-btn" onclick="changeQty(${item.id}, -1)">−</button>
+        <span class="qty-num">${item.qty}</span>
+        <button class="qty-btn" onclick="changeQty(${item.id}, 1)">+</button>
+      </div>
+      <button class="remove-btn" onclick="removeItem(${item.id})" title="Remove">✕</button>
+    </div>
+  `).join('');
+
+  footer.innerHTML = `
+    <div class="total-row">
+      <span class="total-label">Grand Total</span>
+      <span class="total-amount">₹${getTotal()}</span>
+    </div>
+    <button class="checkout-btn" onclick="goToCheckout()">
+      Proceed to Order →
+    </button>`;
+}
+
+function goToCheckout() {
+  currentView = 'checkout';
+  renderCartBody();
+}
+
+/* ════════════════════════════════════════════
+   CHECKOUT FORM
+════════════════════════════════════════════ */
+function renderCheckoutForm(body, footer, title) {
+  title.textContent = '📦 Place Order';
+
+  const orderLines = cart.map(i =>
+    `${i.name} x${i.qty} = Rs.${i.price * i.qty}`
+  ).join('\n');
+  const orderSummary = `ORDER SUMMARY\n${'-'.repeat(30)}\n${orderLines}\n${'-'.repeat(30)}\nGrand Total: Rs.${getTotal()}\n${'-'.repeat(30)}\nShop: Baby Pink | 8602675154`;
+
+  body.innerHTML = `
+    <button class="back-link" onclick="currentView='cart'; renderCartBody()">
+      ← Back to cart
+    </button>
+
+    <div class="form-section">
+      <h3>Your Delivery Details</h3>
+
+      <form id="orderForm"
+            action="https://formspree.io/f/YOUR_FORM_ID_HERE"
+            method="POST"
+            onsubmit="handleSubmit(event)">
+
+        <!-- Hidden fields carry full order data -->
+        <input type="hidden" name="_subject" value="New Order from Baby Pink Website 🛍️" />
+        <input type="hidden" name="order_summary" id="hiddenSummary" value="${orderSummary.replace(/"/g, '&quot;')}" />
+        <input type="hidden" name="grand_total" value="Rs.${getTotal()}" />
+
+        <div class="form-group">
+          <label>Your Name *</label>
+          <input type="text" name="customer_name" placeholder="e.g. Priya Sharma" required />
+        </div>
+        <div class="form-group">
+          <label>Phone Number *</label>
+          <input type="tel" name="customer_phone" placeholder="e.g. 9876543210" required pattern="[0-9]{10}" />
+        </div>
+        <div class="form-group">
+          <label>Delivery Address *</label>
+          <input type="text" name="delivery_address" placeholder="House no., Street, Village/Town, Pincode" required />
+        </div>
+        <div class="form-group">
+          <label>Special Instructions (optional)</label>
+          <textarea name="special_instructions" placeholder="Any notes for the shopkeeper..."></textarea>
+        </div>
+
+        <!-- Readable cart summary in form -->
+        <div class="form-group">
+          <label>Your Order</label>
+          <textarea name="cart_items" readonly style="font-family:monospace;font-size:0.7rem;background:#fde8ef;color:#2a1a1e;">${orderSummary}</textarea>
+        </div>
+
+        <button type="submit" class="place-order-btn" id="placeOrderBtn">
+          🌸 Confirm & Place Order
+        </button>
+      </form>
+
+      <p style="font-size:0.68rem;color:#8a6570;text-align:center;margin-top:0.8rem;line-height:1.6;">
+        ⚠️ <em>This is not an online payment. Baby Pink will confirm your order via WhatsApp.</em>
+      </p>
+    </div>`;
+
+  footer.innerHTML = '';
+}
+
+/* ════════════════════════════════════════════
+   FORM SUBMIT (Formspree)
+════════════════════════════════════════════ */
+async function handleSubmit(e) {
+  e.preventDefault();
+  const form = e.target;
+  const btn  = document.getElementById('placeOrderBtn');
+
+  btn.disabled = true;
+  btn.textContent = 'Sending…';
+
+  const data = new FormData(form);
+
+  try {
+    const res = await fetch(form.action, {
+      method: 'POST',
+      body: data,
+      headers: { Accept: 'application/json' }
+    });
+
+    if (res.ok) {
+      cart = [];
+      saveCart();
+      updateBadges();
+      currentView = 'success';
+      renderCartBody();
+      renderProducts(document.querySelector('.pill.active').dataset.cat);
+    } else {
+      const err = await res.json();
+      if (err.errors && err.errors[0].message.includes('form')) {
+        // Formspree not configured — demo mode
+        showDemoSuccess();
+      } else {
+        btn.disabled = false;
+        btn.textContent = '🌸 Confirm & Place Order';
+        showToast('Something went wrong. Please try again.');
+      }
+    }
+  } catch {
+    // Network error or Formspree not yet configured
+    showDemoSuccess();
+  }
+}
+
+function showDemoSuccess() {
+  // Fallback: open WhatsApp with order details instead
+  const lines = cart.map(i => `• ${i.name} x${i.qty} = ₹${i.price * i.qty}`).join('%0a');
+  const msg = encodeURIComponent(
+    `🌸 New Order from Baby Pink Website\n\n${cart.map(i=>`• ${i.name} x${i.qty} = ₹${i.price*i.qty}`).join('\n')}\n\nGrand Total: ₹${getTotal()}`
+  );
+  window.open(`https://wa.me/918602675154?text=${msg}`, '_blank');
+
+  cart = [];
+  saveCart();
+  updateBadges();
+  currentView = 'success';
+  renderCartBody();
+  renderProducts(document.querySelector('.pill.active').dataset.cat);
+}
+
+/* ════════════════════════════════════════════
+   TOAST
+════════════════════════════════════════════ */
+let toastTimer;
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => t.classList.remove('show'), 2200);
+}
+
+/* ════════════════════════════════════════════
+   INIT
+════════════════════════════════════════════ */
+renderProducts();
+updateBadges();
+</script>
+</body>
+</html>
